@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <style>
+        .game {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .title {
+            font-size: 28px;
+            color: purple;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .choices {
+            display: flex;
+            padding-top: 2%;
+            justify-content: space-between;
+        }
+
+        .choices button {
+            margin: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 7%;
+            font-size: 18px;
+            background-color: hsl(200, 100%, 50%);
+            transition: background-color 0.5s ease;
+        }
+        .choices button:hover {
+            background-color: hsl(200, 100%, 70%);
+        }
+
+        #PlayerDisplay,
+        #ComputerDisplay,
+        #resultDisplay {
+            font-size: 23px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-left: 3%;
+        }
+        #Restart {
+            font-size: 16px;
+            background-color: purple;
+            border-radius: 4%;
+        }
+       
+
+        /*for mobile screen*/
+        @media (max-width:768px) {
+            .container {
+                display: grid;
+                grid-template-columns: auto;
+                width: 400px;
+            }    
+        }
+        /*for tablet screen*/
+        @media (min-width:769px) and (max-width:992px) {
+            .container {
+                display: flex;
+                width: 700px;
+            }
+        }
+        @media (min-width:993px) and (max-width:1200px) {
+            .container {
+                display: flex;
+                width:100%;
+                background-color:skyblue;
+            }
+            .game{
+                margin-left: 20%;
+            }  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="game">
+            <div class="title">Rock Paper Scissor</div>
+            <div class="choices">
+                <button onclick="playgame('rock')">Rock</button>
+                <button onclick="playgame('Paper')">Paper</button>
+                <button onclick="playgame('Scissor')">Scissor</button>
+            </div>
+            <div id="PlayerDisplay">Player:</div>
+            <div id="ComputerDisplay">computer:</div>
+            <div id="resultDisplay">it's a tie</div>
+            <button onclick="Restart()" id="Restart">Restart</button>
+        </section>
+       
+        <section class="game">
+            How to play?
+            <ol type="number">
+                <li>You can start the game by selecting "rock", "scissors" or "paper".</li>
+                <li>Choose continuously until you create a pattern</li>
+                <li>Examples of patterns:</li>
+                <ul>
+                    <li>Rock, rock, rock, rock, etc.</li>
+                    <li>Rock, scissors, rock, scissors, etc</li>
+                    <li>Rock, scissors, paper, rock, scissors, paper, etc</li>
+                    <li>Paper, paper, paper, paper, etc.</li>
+                </ul>
+                <li>See that you will lose</li>
+            </ol>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
